@@ -81,6 +81,11 @@
     font-weight: bold;
 }
 
+.span3, .span2 {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
 small, h5 {
     color: var(--darkblue);
     font-weight: bold;
