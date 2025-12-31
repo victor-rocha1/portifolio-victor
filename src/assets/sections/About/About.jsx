@@ -28,9 +28,9 @@ function About({ darkMode }) {
             <Title text='Victor' spantext='Rocha' />
             <p className="desc">Desenvolvedor</p>
             <ul className='description-list'>
-              <li>Estudante do 6° período de Análise e Desenvolvimento de Sistemas<span>.</span></li>
+              <li>Formado em Análise e Desenvolvimento de Sistemas<span>.</span></li>
               <li>Estudante de diversos cursos na área de tecnologia, focados em Programação<span>.</span></li>
-              <li>Estagiário na Prodemge<span>.</span></li>
+              <li>Assessor de T.I na Prodemge<span>.</span></li>
             </ul>
             <br />
             <br />

@@ -81,7 +81,7 @@
     font-weight: bold;
 }
 
-.span3, .span2 {
+.span3 {
     font-size: 1.1rem;
     font-weight: bold;
 }
@@ -100,6 +100,10 @@ small, h5 {
 
     .text-content small, .text-content h5 span {
         font-size: 0.9rem;
+    }
+
+    .span3 {
+        font-size: .8rem;
     }
 
     .card {
