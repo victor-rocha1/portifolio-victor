@@ -55,6 +55,10 @@ li span {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.description-list {
+    color: var(--whitedarktext);
+}
+
 .description-list li strong {
     padding: 0;
     margin: 0;
@@ -141,7 +145,6 @@ p.desc {
     .description-list li strong {
         font-size: inherit;
         font-weight: 700;
-        color: var(--whitedarktext);
     }
 
     p.desc {
