@@ -26,7 +26,7 @@ function App() {
       <Projects darkMode={darkMode} />
       <Experiences darkMode={darkMode} /> 
       <Footer darkMode={darkMode} />
-      <ButtonTop /> {/* 2. Adicione o componente aqui */}
+      <ButtonTop />
     </div>
   );
 }

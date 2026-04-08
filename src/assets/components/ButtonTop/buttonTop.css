@@ -59,3 +59,39 @@
     transform: scale(1.1);
     background-color: var(--darkblue); /* Escurece um pouco no hover */
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .back-to-top-container {
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .back-to-top-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 6px; 
+    }
+
+    .back-to-top-btn i {
+        font-size: 18px;
+    }
+
+    .back-to-top-text {
+        bottom: 50px;
+        font-size: 0.7rem;
+        padding: 4px 12px;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .back-to-top-container {
+        bottom: 15px;
+        left: 15px;
+    }
+    
+    .back-to-top-text {
+        display: none; 
+    }
+}
