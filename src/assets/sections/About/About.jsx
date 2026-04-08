@@ -1,6 +1,5 @@
 import './about.css';
-import avatarLight from '../../../../public/images/avatar.jpg';
-import avatarDark from '../../../../public/images/avatar-dark.jpg';
+import avatar from '../../../../public/images/avatar.jpg';
 import fundo from '../../../../public/images/fundo.png'; 
 import fundoEscuro from '../../../../public/images/fundo-escuro.png';
 
@@ -22,15 +21,15 @@ function About({ darkMode }) {
       <div className="interface">
         <div className="about2">
           <div className="avatar">
-            <img src={darkMode ? avatarDark : avatarLight} alt="Avatar de Victor" />
+            <img src={avatar} alt="Avatar de Victor" />
           </div>
           <div className="about-content">
             <Title text='Victor' spantext='Rocha' />
-            <p className="desc">Desenvolvedor</p>
+            <p className="desc">Desenvolvedor Full Stack</p>
             <ul className='description-list'>
-              <li>Formado em Análise e Desenvolvimento de Sistemas<span>.</span></li>
-              <li>Estudante de diversos cursos na área de tecnologia, focados em Programação<span>.</span></li>
-              <li>Assessor de T.I na Prodemge<span>.</span></li>
+              <li>🎓 Graduado em <strong>Análise e Desenvolvimento de Sistemas</strong>.</li>
+              <li>💻 Especialista em React, JavaScript e ecossistema Web.</li>
+              <li>🏢 Assessor de T.I na <strong>Prodemge</strong>, focado em soluções eficientes.</li>
             </ul>
             <br />
             <br />

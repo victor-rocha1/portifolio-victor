@@ -30,9 +30,8 @@ li span {
 }
 
 .avatar img {
-    width: 400px;
-    border-radius: 50%;
-    box-shadow: 0 0 5px var(--azul);
+    width: 500px;
+    border-bottom: 1px solid var(--azul);
 }
 
 .about-content {
@@ -56,10 +55,9 @@ li span {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.description-list {
+.description-list li strong {
     padding: 0;
     margin: 0;
-    font-size: 1rem;
     color: var(--whitedarktext);
 }
 
@@ -90,41 +88,95 @@ p.desc {
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
+    .about {
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 110px;
+        /* Garante que não suba demais */
+    }
+
     .about2 {
         flex-direction: column;
-        text-align: center;
         align-items: center;
-        gap: 20px;
+        text-align: center;
+        gap: 40px;
     }
 
     .avatar {
-        padding-top: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .avatar img {
-        max-width: 150px;
+        padding-top: 40px;
+        width: 70%;
+        max-width: 400px;
+        height: auto;
     }
 
     .about-content {
         align-items: center;
+        width: 100%;
     }
 
-    .titleh {
-        font-size: 1.5rem;
-        text-align: center;
+    .description-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+
+        width: fit-content;
+        max-width: 90%;
+        margin: 0 auto;
+        padding-left: 20px;
+    }
+
+    .description-list li {
+        word-wrap: break-word;
+        margin-bottom: 15px;
+    }
+
+    .description-list li strong {
+        font-size: inherit;
+        font-weight: 700;
+        color: var(--whitedarktext);
     }
 
     p.desc {
-        font-size: 1.2rem;
-        color: var(--darkblue);
-        font-weight: bold;
-        margin-bottom: 20px;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        align-items: center;
+        width: 100%;
+        /* text-align: center; */
     }
 
     .description-list li {
         font-size: 1rem;
-        margin-bottom: 1px;
-        text-align: left;
+        margin-bottom: 12px;
+        line-height: 1.4;
+    }
+
+    .description-list li strong {
+        font-size: inherit;
+        font-weight: 700;
+        color: var(--whitedarktext);
+        display: inline;
+    }
+
+    .description-list li strong {
+        font-weight: 700;
+        display: inline;
+    }
+
+    p.desc {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
     }
 }
