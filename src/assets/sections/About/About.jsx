@@ -28,7 +28,7 @@ function About({ darkMode }) {
             <p className="desc">Desenvolvedor Full Stack</p>
             <ul className='description-list'>
               <li>🎓 Graduado em <strong>Análise e Desenvolvimento de Sistemas</strong>.</li>
-              <li>💻 Especialista em React, JavaScript e ecossistema Web.</li>
+              <li>💻 Gosto de trabalhar com React e frameworks de Php (Laravel, CakePHP).</li>
               <li>🏢 Assessor de T.I na <strong>Prodemge</strong>, focado em soluções eficientes.</li>
             </ul>
             <br />
