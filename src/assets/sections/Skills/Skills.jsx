@@ -41,7 +41,7 @@ function Skills() {
                             No <span>Front End</span>, utilizo <span>JavaScript</span>, <span>HTML5</span>,
                             <span>CSS3</span> e <span>React</span>  desenvolvendo interfaces modernas e eficientes. <br />
                             No <span>Back End</span>, trabalho com <span>PHP</span> utilizando o framework
-                            <span> CakePHP</span>, integrado  principalmenteao <span>Banco de Dados Oracle</span>.
+                            <span> CakePHP</span>, integrado  principalmente ao <span>Banco de Dados Oracle</span>.
                         </p>
                     </div>
 
