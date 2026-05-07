@@ -1,11 +1,6 @@
 .experiências {
-    text-align: center;
     padding: 0 20px;
     background-color: var(--white);
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
 }
 
 .timeline {
@@ -19,65 +14,114 @@
     margin: 0 auto;
 }
 
-.card {
-    max-width: 100%;
-    margin: 20px auto;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
+/* Container que segura tudo */
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px 0;
 }
 
-.card-content {
+/* Container do topo do card */
+.card-header {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    gap: 20px;
+    justify-content: left; 
+    align-items: center; /* Alinha logo e data centralizados um entre outro */
+    margin-bottom: 15px;
 }
 
-.card-content img {
-    width: 300px;
+/* Ajuste específico da Logo */
+.img-card-timeline {
+    width: 150px; /* Tamanho fixo para não quebrar o layout */
     height: auto;
-    margin-right: 20px;
+    object-fit: contain;
+    padding: 10px;
 }
 
-.text-content {
-    color: var(--whitedarktext);
-    background-color: var(--offwhite);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
+/* Ajuste dos textos para não ficarem grudados */
+.timeline-card h5 {
+    margin: 10px 0;
+    font-size: 1.3rem;
+}
+
+.timeline-card ul {
+    padding-left: 20px;
     text-align: left;
-    flex: 1;
-    padding: 20px;
+}
+
+
+/*  Linha Central */
+.timeline-line {
+    position: absolute;
+    width: 4px;
+    background-color: var(--azul);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Garante que a linha fique exatamente no centro */
+}
+
+/* Posicionando os Itens */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%; /* Cada item ocupa metade da largura */
+    box-sizing: border-box;
+}
+
+/* Item da Esquerda */
+.timeline-item.left {
+    left: 0;
+}
+
+li{
+    color: var(--whitedarktext);
     max-width: 800px;
 }
 
-.text-content ul {
-    list-style-type: disc; 
-    margin-left: 15px; 
-    padding: 0; 
-    font-size: 1.1rem; 
-    line-height: 1.6; 
-    color: var(--whitedarktext);
+/* Item da Direita */
+.timeline-item.right {
+    left: 50%;
 }
 
-.text-content ul li {
-    margin-bottom: 3px; 
+/* A Bolinha (Dot) na Linha */
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: var(--azul);
+    border-radius: 50%;
+    top: 30px;
+    z-index: 2;
+    border: 3px solid var(--white);/* Borda branca para destacar da linha */
 }
 
-.text-content span {
-    color: var(--azul);
-    font-weight: bold;
+.left .timeline-dot {
+    right: -8px;
+}
+
+/* Alinha na ponta direita do card esquerdo */
+.right .timeline-dot {
+    left: -8px;
+}
+
+/* Alinha na ponta esquerda do card direito */
+.timeline-card {
+    background-color: var(--offwhite);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.timeline-card:hover {
+    border-color: var(--azul);
+    transform: translateY(-5px);
 }
 
 .span1, .span2 {
-    font-size: .95rem;
+    font-size: 1.1rem;
     font-weight: bold;
 }
 
@@ -92,16 +136,6 @@ small, h5 {
 }
 
 @media (max-width: 900px) {
-    .text-content {
-        font-size: 1rem;
-        padding: 10px;
-        width: 100%;
-    }
-
-    .text-content small, .text-content h5 span {
-        font-size: 0.9rem;
-    }
-
     .span3 {
         font-size: .8rem;
     }
@@ -123,25 +157,4 @@ small, h5 {
         display: none;
     }
 
-    .text-content {
-        font-size: 1rem;
-        padding: 10px;
-        width: 100%;
-    }
-
-    .text-content small, .text-content h5 {
-        font-size: 0.9rem;
-    }
-
-    .card {
-        margin: 10px;
-        padding: 15px;
-    }
-
-    .text-content ul {
-        list-style-position: outside;
-        padding-left: 0px; 
-        font-size: 0.9rem; 
-        line-height: 1.2; 
-    }
 }
