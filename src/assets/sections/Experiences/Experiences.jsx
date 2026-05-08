@@ -18,7 +18,7 @@ function Experiences() {
 
                         <div className="timeline-card">
                             <div className="card-header">
-                                <small className='span1'>Dez 2025 - <span className='span2'>atual</span></small>
+                                <small className='span1'>Dez 25 - <span className='span2'>atual</span></small>
                                 <img src={logo_prodemge} alt="Logo Prodemge" className='img-card-timeline' />
                             </div>
                             <h5>Assessor de T.I</h5>
@@ -34,7 +34,7 @@ function Experiences() {
                         <div className="timeline-dot"></div>
                         <div className="timeline-card">
                             <div className="card-header">
-                                <small className='span1'>Dez 2025 - <span className='span2'>atual</span></small>
+                                <small className='span1'>0ut 24 - <span className='span2'>Nov 25</span></small>
                                 <img src={logo_prodemge} alt="Logo Prodemge" className='img-card-timeline' />
                             </div>
                             <h5>Estagiário</h5>
