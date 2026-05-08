@@ -6,7 +6,6 @@ function Experiences() {
     return (
         <>
             <section className="experiências" id='experiences'>
-                <br /><br /> <br />
                 <Title text="Minha " spantext="Experiência" />
 
                 <div className="timeline-container">
