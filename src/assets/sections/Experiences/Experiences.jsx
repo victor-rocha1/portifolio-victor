@@ -24,7 +24,8 @@ function Experiences() {
                             <h5>Assessor de T.I</h5>
                             <ul>
                                 <li>Manutenção e evolução do <span className='span3'>Sistema do Protocolo Digital</span>.</li>
-                                <li>Uso de CakePhP, Oracle e Bootstrap.</li>
+                                <li>Manutenção e evolução do <span className='span3'>Sistema de Cadastro de Despachantes</span>.</li>
+                                <li>Uso de CakePhP, Laravel, Oracle e Bootstrap.</li>
                             </ul>
                         </div>
                     </div>
