@@ -21,11 +21,12 @@ function Experiences() {
                                 <small className='span1'>Dez 25 - <span className='span2'>atual</span></small>
                                 <img src={logo_prodemge} alt="Logo Prodemge" className='img-card-timeline' />
                             </div>
-                            <h5>Assessor de T.I</h5>
+                            <h5>Analista de T.I</h5>
                             <ul>
                                 <li>Manutenção e evolução do <span className='span3'>Sistema do Protocolo Digital</span>.</li>
                                 <li>Manutenção e evolução do <span className='span3'>Sistema de Cadastro de Despachantes</span>.</li>
                                 <li>Uso de CakePhP, Laravel, Oracle e Bootstrap.</li>
+                                <li>Em ambos os projetos participei da adequação ao <span className='span3'>novo formato de CNPJ Alfanumérico</span>, realizando testes e validações.</li>
                             </ul>
                         </div>
                     </div>
