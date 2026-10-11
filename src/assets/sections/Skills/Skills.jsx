@@ -1,16 +1,16 @@
 import Title from "../../components/Title/Title";
 import "./skills.css";
-import git from "../../../../public/images/git.png";
-import github from "../../../../public/images/github.png";
-import js from "../../../../public/images/js.png";
-import html from "../../../../public/images/html.png";
-import css from "../../../../public/images/css.png";
-import react from "../../../../public/images/react.png";
-import python from "../../../../public/images/python.png";
-import postgres from "../../../../public/images/postgres.png";
-import sql from "../../../../public/images/sql.png";
-import php from "../../../../public/images/php.png";
-import laravel from "../../../../public/images/laravel.png";
+import git from "../../../../public/images/git.webp";
+import github from "../../../../public/images/github.webp";
+import js from "../../../../public/images/js.webp";
+import html from "../../../../public/images/html.webp";
+import css from "../../../../public/images/css.webp";
+import react from "../../../../public/images/react.webp";
+import python from "../../../../public/images/python.webp";
+import postgres from "../../../../public/images/postgres.webp";
+import sql from "../../../../public/images/sql.webp";
+import php from "../../../../public/images/php.webp";
+import laravel from "../../../../public/images/laravel.webp";
 
 const techs = [
     { src: git, alt: "Git" },

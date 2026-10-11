@@ -1,7 +1,7 @@
 import './about.css';
 import avatar from '../../../../public/images/avatar.jpg';
-import fundo from '../../../../public/images/fundo.png'; 
-import fundoEscuro from '../../../../public/images/fundo-escuro.png';
+import fundo from '../../../../public/images/fundo.webp'; 
+import fundoEscuro from '../../../../public/images/fundo-escuro.webp';
 
 import Title from '../../components/Title/Title';
 import Icons from '../../components/Icons/Icons';

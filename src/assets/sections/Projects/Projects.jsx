@@ -8,14 +8,14 @@ import 'swiper/css/effect-coverflow';
 
 import Title from "../../components/Title/Title.jsx";
 import ImgProject from "../../components/ImgProject/ImgProject.jsx";
-import imgSpace from "./images/VRSpaceX.png";
-import imgValidador from "./images/validador.png";
-import imgCalculadoraPy from "./images/calculadorapy.png";
-import imgOneBitFlix from "./images/onebitflix.png";
-import imgJogodeDamas from "./images/jogo-de-dama.png";
-import imgCadastro from "./images/cadastro-laravel.png";
-import imgLinkHub from "./images/linkhub.png";
-import imgFeetCare from "./images/feetcare.png";
+import imgSpace from "./images/VRSpaceX.webp";
+import imgValidador from "./images/validador.webp";
+import imgCalculadoraPy from "./images/calculadorapy.webp";
+import imgOneBitFlix from "./images/onebitflix.webp";
+import imgJogodeDamas from "./images/jogo-de-dama.webp";
+import imgCadastro from "./images/cadastro-laravel.webp";
+import imgLinkHub from "./images/linkhub.webp";
+import imgFeetCare from "./images/feetcare.webp";
 import './projects.css';
 
 function Projects() {

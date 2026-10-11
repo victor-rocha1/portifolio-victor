@@ -1,6 +1,6 @@
 import Title from '../../components/Title/Title';
 import './experiences.css';
-import logo_prodemge from "../../../../public/images/logo_prodemge.png"
+import logo_prodemge from "../../../../public/images/logo_prodemge.webp"
 
 function Experiences() {
     return (

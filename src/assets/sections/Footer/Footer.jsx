@@ -1,5 +1,5 @@
 import Icons from '../../components/Icons/Icons';
-import logo from '/public/images/logo.png';
+import logo from '/public/images/logo.webp';
 import './footer.css';
 
 function Footer() {

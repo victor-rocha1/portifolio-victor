@@ -25,7 +25,7 @@ O portfólio está dividido nas seguintes seções:
   &nbsp;&nbsp;
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="40" height="40"/>
   &nbsp;&nbsp;
-  <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Pages" width="40" height="40"/>
+  <img src="https://cdn-icons-png.flaticon.com/512/25/25231.webp" alt="GitHub Pages" width="40" height="40"/>
 </p>
 
 
