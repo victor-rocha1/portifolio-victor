@@ -1,79 +1,101 @@
-import Title from "../../components/Title/Title";
-import "./skills.css";
-import git from "../../../../public/images/git.webp";
-import github from "../../../../public/images/github.webp";
-import js from "../../../../public/images/js.webp";
-import html from "../../../../public/images/html.webp";
-import css from "../../../../public/images/css.webp";
-import react from "../../../../public/images/react.webp";
-import python from "../../../../public/images/python.webp";
-import postgres from "../../../../public/images/postgres.webp";
-import sql from "../../../../public/images/sql.webp";
-import php from "../../../../public/images/php.webp";
-import laravel from "../../../../public/images/laravel.webp";
+import React from 'react';
+import Title from '../../components/Title/Title';
+import './skills.css';
+
+import reactIcon from '/images/react.webp';
+import jsIcon from '/images/js.webp';
+import htmlIcon from '/images/html.webp';
+import cssIcon from '/images/css.webp';
+import phpIcon from '/images/php.webp';
+import laravelIcon from '/images/laravel.webp';
+import pythonIcon from '/images/python.webp';
+import postgresIcon from '/images/postgres.webp';
+import sqlIcon from '/images/sql.webp';
+import gitIcon from '/images/git.webp';
+import githubIcon from '/images/github.webp';
 
 const techs = [
-    { src: git, alt: "Git" },
-    { src: github, alt: "GitHub" },
-    { src: js, alt: "JavaScript" },
-    { src: html, alt: "HTML5" },
-    { src: css, alt: "CSS3" },
-    { src: react, alt: "React" },
-    { src: python, alt: "Python" },
-    { src: postgres, alt: "PostgreSQL" },
-    { src: sql, alt: "SQL" },
-    { src: php, alt: "PHP" },
-    { src: laravel, alt: "Laravel" },
+  { name: 'React', src: reactIcon, category: 'Front-End' },
+  { name: 'JavaScript', src: jsIcon, category: 'Linguagem' },
+  { name: 'HTML5', src: htmlIcon, category: 'Front-End' },
+  { name: 'CSS3', src: cssIcon, category: 'Estilização' },
+  { name: 'PHP', src: phpIcon, category: 'Back-End' },
+  { name: 'Laravel', src: laravelIcon, category: 'Framework PHP' },
+  { name: 'Python', src: pythonIcon, category: 'Automação' },
+  { name: 'PostgreSQL', src: postgresIcon, category: 'Banco de Dados' },
+  { name: 'Oracle SQL', src: sqlIcon, category: 'Banco de Dados' },
+  { name: 'Git', src: gitIcon, category: 'Versionamento' },
+  { name: 'GitHub', src: githubIcon, category: 'Repositório' },
 ];
 
 function Skills() {
-    return (
-        <section className="skills" id="skills">
-            <Title text="Habilidades" spantext="Gerais" />
-            <br />
+  return (
+    <section className="skills-section" id="skills">
+      <div className="interface">
+        <Title text="Habilidades" spantext="Gerais" tag="Stack & Domínio Técnico" />
 
-            <div className="interface">
-                <div className="flex">
-                    <div className="box">
-                        <i className="bi bi-code-slash"></i>
-                        <h2>Programação</h2>
-                        <p>
-                            No <span>Front End</span>, utilizo <span>JavaScript</span>, <span>HTML5</span>,
-                            <span>CSS3</span> e <span>React</span>  desenvolvendo interfaces modernas e eficientes. <br />
-                            No <span>Back End</span>, trabalho com <span>PHP</span> utilizando o framework
-                            <span> CakePHP</span>, integrado  principalmente ao <span>Banco de Dados Oracle</span>.
-                        </p>
-                    </div>
+        <div className="skills-pillars-grid">
+          <div className="skill-box">
+            <div className="skill-box-header">
+              <div className="skill-icon-wrap">
+                <i className="bi bi-code-slash"></i>
+              </div>
+              <h3>Programação</h3>
+            </div>
+            <p>
+              No <span>Front End</span>, interfaces modernas e responsivas utilizando{' '}
+              <span>React</span>, <span>JavaScript</span>, <span>HTML5</span> e <span>CSS3</span>. <br />
+              No <span>Back End</span>, desenvolvimento sólido em <span>PHP</span> com frameworks{' '}
+              <span>CakePHP</span> e <span>Laravel</span>, integrado a bancos relacionais como <span>Oracle</span> e <span>PostgreSQL</span>.
+            </p>
+          </div>
 
-                    <div className="box">
-                        <i className="bi bi-fast-forward"></i>
-                        <h2>Automação</h2>
-                        <p>
-                            Estudei previamente a ferramenta <span>n8n</span>, criando fluxos para otimizar processos manuais. Também possuo conhecimentos em <span>Python</span>, desenvolvendo <span>scripts para automatizar tarefas repetitivas simples</span>.
-                        </p>
+          <div className="skill-box">
+            <div className="skill-box-header">
+              <div className="skill-icon-wrap">
+                <i className="bi bi-fast-forward"></i>
+              </div>
+              <h3>Automação</h3>
+            </div>
+            <p>
+              Criação de fluxos inteligentes e integração de serviços via <span>n8n</span> para eliminação
+              de gargalos manuais. Desenvolvimento de scripts eficientes em <span>Python</span> para{' '}
+              <span>automação de rotinas repetitivas</span> e processamento de dados com alta agilidade.
+            </p>
+          </div>
 
-                    </div>
+          <div className="skill-box">
+            <div className="skill-box-header">
+              <div className="skill-icon-wrap">
+                <i className="bi bi-clipboard-data"></i>
+              </div>
+              <h3>Metodologias Ágeis</h3>
+            </div>
+            <p>
+              Vivência prática em times de tecnologia aplicando <span>Scrum</span> e <span>Kanban</span>.
+              Elaboração minuciosa de <span>Análise de Requisitos</span>, detalhamento de{' '}
+              <span>Histórias de Usuário</span> e gestão do ciclo de vida de software via <span>GitLab</span> e <span>GitHub</span>.
+            </p>
+          </div>
+        </div>
 
-                    <div className="box">
-                        <i className="bi bi-clipboard-data"></i>
-                        <h2>Metodologias Ágeis</h2>
-                        <p>
-                            Tenho conhecimento nas metodologias <span>Scrum</span> e <span>Kanban</span>,
-                            aplicando conceitos como <span>Análise de Requisitos</span>,
-                            <span> Histórias de Usuário</span> e o uso do <span>GitLab </span>
-                            para gestão e versionamento de código.
-                        </p>
-                    </div>
+        {/* Tech Stack Bar */}
+        <div className="tech-stack-container">
+          <div className="tech-stack-title">Tecnologias & Ferramentas</div>
+          <div className="tech-grid">
+            {techs.map((tech, index) => (
+              <div key={index} className="tech-badge" title={`${tech.name} - ${tech.category}`}>
+                <div className="tech-icon-container">
+                  <img src={tech.src} alt={tech.name} loading="lazy" />
                 </div>
-            </div>
-
-            <div className="icons">
-                {techs.map((tech, index) => (
-                    <img key={index} src={tech.src} alt={tech.alt} />
-                ))}
-            </div>
-        </section>
-    );
+                <span className="tech-name">{tech.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default Skills;

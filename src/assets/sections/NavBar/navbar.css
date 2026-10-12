@@ -1,189 +1,314 @@
-header {
-    background-color: var(--white);
-    padding: 1px 0; /* Menor altura */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    z-index: 2000;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+.header-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+  background-color: var(--navbar-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(32, 103, 199, 0.12);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 12px 0;
 }
 
-/* Navegação superior */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 32px;
-    padding-right: 32px;
-    position: relative;   /* Necessário para conter elementos filhos */
-    max-width: 1400px; /* Limita a largura máxima */
-    margin: 0 auto;       /* Centraliza o conteúdo */
+.header-nav.scrolled {
+  padding: 8px 0;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  border-bottom-color: rgba(32, 103, 199, 0.25);
 }
 
-.navbar img {
-    width: 55px;
-    margin-left: 0; /* Remove a margem negativa */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.nav-brand:hover {
+  transform: scale(1.02);
+}
+
+.brand-logo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(32, 103, 199, 0.35));
+}
+
+.brand-text {
+  font-family: "Exo 2", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--whitedarktext);
+}
+
+.brand-text span {
+  color: var(--azul);
 }
 
 .nav-links {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    justify-content: center;
-    margin: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
 }
 
-.nav-links a{
-    font-size: 1.2rem !important;
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--cinza);
+  position: relative;
+  transition: color 0.2s ease;
+  padding: 6px 0;
 }
 
-.navbar a {
-    margin: 0 60px;
-    text-decoration: none;
-    color: var(--cinza2);
-    font-size: 1.4rem;
-    transition: color 0.3s ease, transform 0.3s ease;
+body.dark .nav-links a {
+  color: #cbd5e1;
 }
 
-.navbar a:first-child {
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--azul), #38bdf8);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-links a:hover {
+  color: var(--azul);
+}
+
+body.dark .nav-links a:hover {
+  color: #38bdf8;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+  transition: all 0.25s ease;
+}
+
+.nav-cta-btn i {
+  font-size: 1.1rem;
+}
+
+.nav-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+  color: #ffffff;
 }
 
 .theme-toggle-wrapper {
-    margin-right: 0;
-    padding-right: 0;
+  display: flex;
+  align-items: center;
 }
 
-.navbar a:hover {
-    color: var(--azul);
-    transform: scale(1.1);
+/* Hamburger button */
+.menu-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
 }
 
- /* Dark Mode  */
-.theme-toggle-wrapper {
-    /* O posicionamento absoluto foi removido para que ele se alinhe com o flexbox */
-    margin-right: 0;
+.menu-hamburger span {
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--whitedarktext);
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Botão de menu lateral */
-.menu {
-    display: none;
-    border: none;
-    background: none;
-    cursor: pointer;
-    padding: 10px;
-    margin-left: auto;
-    position: relative;
+.menu-hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.menu-hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
 }
 
-.menu::before,
-.menu::after {
-    content: "";
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: var(--cinza2);
-    margin: 5px auto;
-    transition: transform 0.3s ease;
+/* Mobile Drawer */
+.mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1998;
 }
 
-/* Menu lateral */
+.mobile-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
 .side-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 250px;
-    height: 100%;
-    background-color: var(--offwhite);
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease;
-    padding-right: 5px;
-    padding: 20px;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100vh;
+  background-color: var(--body-bg);
+  border-left: 1px solid rgba(32, 103, 199, 0.2);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1999;
 }
 
-/* Quando o menu estiver aberto */
 .side-menu.open {
-    right: 0;
+  right: 0;
 }
 
-/* Cabeçalho do menu lateral (X e Dark Mode) */
 .side-menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(32, 103, 199, 0.15);
 }
 
-/* Botão de fechar (X) */
+.mobile-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .close-menu {
-    font-size: 1.5rem;
-    color: var(--cinza2);
-    cursor: pointer;
-    border: none;
-    background: none;
-    transition: color 0.3s ease;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: var(--whitedarktext);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
 }
 
 .close-menu:hover {
-    color: #ff4d4d;
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
 }
 
-/* Botão de Dark Mode dentro do menu lateral */
-.dark-mode-button {
-    margin-left: auto;
-    transition: transform 0.3s ease;
+.side-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 30px 0;
 }
 
-/* Links do menu lateral */
-.side-menu a {
-    display: block;
-    margin: 15px 0;
-    text-decoration: none;
-    color: var(--cinza2);
-    font-size: 1.3rem;
-    transition: color 0.3s ease;
+.side-menu-links a {
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--whitedarktext);
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
-.side-menu a:hover {
-    color: var(--azul);
+.side-menu-links a:hover {
+  background: rgba(32, 103, 199, 0.12);
+  color: var(--azul);
+  transform: translateX(4px);
 }
 
-/* Responsividade */
-@media (max-width: 750px) {
-    .navbar {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
-
-    .navbar img {
-        margin-left: 0; /* Alinha perfeitamente ao canto */
-        width: 55px;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .theme-toggle-wrapper {
-        display: none;
-    }
-
-    .menu {
-        display: block;
-    }
-
-    .side-menu {
-        width: 50%;
-    }
+.side-menu-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(32, 103, 199, 0.15);
 }
 
-@media (min-width: 751px) {
-    .menu {
-        display: none;
-    }
+.mobile-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border-radius: 99px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.mobile-theme-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--whitedarktext);
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-cta-btn {
+    display: none;
+  }
+
+  .menu-hamburger {
+    display: flex;
+  }
+
+  .navbar-container {
+    padding: 0 20px;
+  }
 }

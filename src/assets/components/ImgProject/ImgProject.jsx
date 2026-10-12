@@ -11,8 +11,8 @@ const ImgProject = ({ img, text, button, github }) => {
       <div className="overlay">
         <p>{text}</p>
         {button && (
-          <button onClick={handleButtonClick}>
-            <i class="bi bi-github"></i>
+          <button onClick={handleButtonClick} aria-label="Abrir repositório no GitHub">
+            <i className="bi bi-github"></i>
           </button>
         )}
       </div>

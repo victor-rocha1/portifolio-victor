@@ -1,150 +1,257 @@
-/* --- Estilos Gerais da Seção --- */
-.experiências {
-    padding: 60px 5%; 
-    background-color: var(--white);
-    overflow-x: hidden;
+.experiences-section {
+  padding: 100px 24px;
+  position: relative;
+  overflow: hidden;
 }
 
 .timeline-container {
-    position: relative;
-    max-width: 1000px;
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.timeline-spine {
+  position: absolute;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, var(--azul) 15%, var(--azul) 85%, transparent);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+body.dark .timeline-spine {
+  background: linear-gradient(180deg, transparent, #38bdf8 15%, var(--azul) 85%, transparent);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+.timeline-block {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.timeline-block.left-block {
+  left: 0;
+}
+
+.timeline-block.right-block {
+  left: 50%;
+}
+
+/* Timeline node */
+.timeline-node {
+  position: absolute;
+  top: 32px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--azul);
+  border: 3px solid var(--body-bg);
+  box-shadow: 0 0 12px var(--azul);
+  z-index: 2;
+}
+
+.left-block .timeline-node {
+  right: -9px;
+}
+
+.right-block .timeline-node {
+  left: -9px;
+}
+
+.node-pulse {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: rgba(32, 103, 199, 0.35);
+  animation: pulseNode 2s infinite ease-out;
+}
+
+/* Timeline card content */
+.timeline-card-content {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 28px 24px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.timeline-card-content:hover {
+  border-color: rgba(32, 103, 199, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px -10px rgba(32, 103, 199, 0.25);
+}
+
+.timeline-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.role-date-badge {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--cinza);
+  padding: 4px 12px;
+  background: rgba(32, 103, 199, 0.08);
+  border: 1px solid rgba(32, 103, 199, 0.18);
+  border-radius: 99px;
+}
+
+body.dark .role-date-badge {
+  color: #94a3b8;
+}
+
+.current-badge {
+  color: #10b981;
+}
+
+.experience-logo {
+  max-height: 24px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.role-title {
+  font-family: "Exo 2", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--whitedarktext);
+  margin: 0 0 4px;
+}
+
+.company-name {
+  font-size: 0.85rem;
+  color: var(--cinza);
+  margin: 0 0 16px;
+  font-weight: 500;
+}
+
+body.dark .company-name {
+  color: #64748b;
+}
+
+.role-responsibilities {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.role-responsibilities li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--cinza);
+}
+
+body.dark .role-responsibilities li {
+  color: #94a3b8;
+}
+
+.role-responsibilities li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--azul);
+}
+
+.highlight-tech {
+  color: var(--azul);
+  font-weight: 600;
+}
+
+body.dark .highlight-tech {
+  color: #38bdf8;
+}
+
+@keyframes pulseNode {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Mobile padronizado: largura harmoniosa igual aos cards do portfólio */
+@media (max-width: 720px) {
+  .experiences-section {
+    padding: 60px 16px;
+  }
+
+  .timeline-container {
+    width: 90%;
+    max-width: 325px;
     margin: 0 auto;
-    padding: 40px 0;
-}
+    padding: 20px 0;
+  }
 
-/* --- Linha e Bolinha (Eixo Central) --- */
-.timeline-line {
-    position: absolute;
-    width: 4px;
-    background-color: var(--azul);
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
+  .timeline-spine {
+    left: 12px;
+    transform: none;
+  }
 
-.timeline-dot {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background-color: var(--azul);
-    border-radius: 50%;
-    top: 30px;
-    z-index: 2;
-    border: 3px solid var(--white);
-}
+  .timeline-block {
+    width: 100% !important;
+    left: 0 !important;
+    padding-left: 32px;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
 
-.left .timeline-dot { right: -8px; }
-.right .timeline-dot { left: -8px; }
+  .timeline-node {
+    left: 4px !important;
+    right: auto !important;
+    width: 18px;
+    height: 18px;
+  }
 
-/* --- Itens e Cards --- */
-.timeline-item {
-    padding: 10px 40px;
-    position: relative;
-    width: 50%; 
-    box-sizing: border-box;
-}
+  .timeline-card-content {
+    padding: 16px 14px;
+    border-radius: 14px;
+  }
 
-.timeline-item.left { left: 0; }
-.timeline-item.right { left: 50%; }
+  .role-title {
+    font-size: 1.05rem;
+  }
 
-.timeline-card {
-    background-color: var(--offwhite);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid transparent;
-    transition: 0.3s;
-    width: 100%; /* Mudado para 100% para ocupar o espaço da coluna */
-}
+  .company-name {
+    font-size: 0.78rem;
+    margin-bottom: 12px;
+  }
 
-.timeline-card:hover {
-    border-color: var(--azul);
-    transform: translateY(-5px);
-}
+  .role-date-badge {
+    font-size: 0.72rem;
+    padding: 3px 10px;
+  }
 
-/* --- Conteúdo Interno do Card --- */
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    overflow: hidden;
-    flex-wrap: nowrap; /* Garante data e logo lado a lado */
-}
+  .experience-logo {
+    max-height: 20px;
+  }
 
-.img-card-timeline {
-    max-width: 120px; 
-    width: 100%;
-    height: auto;
-    flex-shrink: 1;
-    object-fit: contain;
-    padding: 5px;
-}
-
-.timeline-card h5 {
-    margin: 10px 0;
-    font-size: 1.3rem;
-    color: var(--darkblue);
-}
-
-.timeline-card ul {
-    padding-left: 20px;
-    text-align: left;
-}
-
-li {
-    color: var(--whitedarktext);
-    max-width: 800px;
-}
-
-/* --- Tipografia e Cores --- */
-.span1, .span2, .span3, small, h5 {
-    font-weight: bold;
-}
-
-/* Tamanhos base */
-.span1, .span2 { font-size: 1.1rem; }
-.span3 { font-size: inherit; color: var(--azul); }
-
-/* Cores base */
-small, h5 { color: var(--darkblue); }
-
-/* Ajuste fino para o mobile */
-@media (max-width: 700px) {
-    .span1 { font-size: 1rem; }
-}
-
-/* --- Responsividade --- */
-
-/* Tablet Intermediário */
-@media (max-width: 1050px) and (min-width: 769px) {
-    .timeline-item.left { align-items: flex-end; padding-right: 40px; }
-    .timeline-item.right { align-items: flex-start; padding-left: 40px; }
-    .timeline-card { max-width: 90%; }
-}
-
-/* Ajustes de tela média */
-@media (max-width: 950px) {
-    .experiências { padding: 60px 20px; }
-    .timeline-item { padding: 10px 20px; }
-    .timeline-card h5 { font-size: 1.1rem; }
-    .timeline-card li { font-size: 0.9rem; }
-}
-
-/* Mobile - Quebra de Layout */
-@media (max-width: 700px) {
-    .timeline-line { left: 30px; transform: none; }
-    .timeline-dot { left: 22px !important; }
-    
-    .timeline-item {
-        width: 100% !important;
-        left: 0 !important;
-        padding-left: 60px;
-        text-align: left !important;
-    }
-
-    .card-header { flex-wrap: wrap; }
-    .img-card-timeline { max-width: 100px; width: 90%; }
-    .span1 { font-size: 1rem; }
+  .role-responsibilities li {
+    font-size: 0.8rem;
+    line-height: 1.45;
+    padding-left: 16px;
+  }
 }

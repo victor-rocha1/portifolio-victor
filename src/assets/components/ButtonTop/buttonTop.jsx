@@ -37,6 +37,7 @@ function ButtonTop() {
           <button
             onClick={scrollToTop}
             className="back-to-top-btn"
+            aria-label="Voltar ao topo"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >

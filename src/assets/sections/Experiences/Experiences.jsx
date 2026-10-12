@@ -1,56 +1,85 @@
+import React from 'react';
 import Title from '../../components/Title/Title';
 import './experiences.css';
-import logo_prodemge from "../../../../public/images/logo_prodemge.webp"
+import logo_prodemge from '/images/logo_prodemge.webp';
 
 function Experiences() {
-    return (
-        <>
-            <section className="experiências" id='experiences'>
-                <Title text="Minha " spantext="Experiência" />
+  return (
+    <section className="experiences-section" id="experiences">
+      <div className="interface">
+        <Title text="Minha" spantext="Experiência" tag="Carreira & Atuação" />
 
-                <div className="timeline-container">
-                    {/* Esta é a linha que atravessa o centro */}
-                    <div className="timeline-line"></div>
+        <div className="timeline-container">
+          <div className="timeline-spine"></div>
 
-                    {/* Card 1: Assessor de T.I (Lado Direito) */}
-                    <div className="timeline-item right">
-                        <div className="timeline-dot"></div>
+          {/* Item 1: Analista de T.I */}
+          <div className="timeline-block right-block">
+            <div className="timeline-node">
+              <div className="node-pulse"></div>
+            </div>
 
-                        <div className="timeline-card">
-                            <div className="card-header">
-                                <small className='span1'>Dez 25 - <span className='span2'>atual</span></small>
-                                <img src={logo_prodemge} alt="Logo Prodemge" className='img-card-timeline' />
-                            </div>
-                            <h5>Analista de T.I</h5>
-                            <ul>
-                                <li>Manutenção e evolução do <span className='span3'>Sistema do Protocolo Digital</span>.</li>
-                                <li>Manutenção e evolução do <span className='span3'>Sistema de Cadastro de Despachantes</span>.</li>
-                                <li>Uso de CakePhP, Laravel, Oracle e Bootstrap.</li>
-                                <li>Em ambos os projetos participei da adequação ao <span className='span3'>novo formato de CNPJ Alfanumérico</span>, realizando testes e validações.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    {/* Card 2: Estagiário (Lado Esquerdo)  */}
-                    <div className="timeline-item left">
-                        <div className="timeline-dot"></div>
-                        <div className="timeline-card">
-                            <div className="card-header">
-                                <small className='span1'>0ut 24 - <span className='span2'>Nov 25</span></small>
-                                <img src={logo_prodemge} alt="Logo Prodemge" className='img-card-timeline' />
-                            </div>
-                            <h5>Estagiário</h5>
-                            <ul>
-                                <li>Uso de Metodologias Ágeis: Scrum e Kanban</li>
-                                <li>Escrita de Histórias de usuário e organização estruturada no GitLab</li>
-                                <li>Manutenção e evolução do <span className='span3'>Sistema de Envio de Correspondências de Trânsito</span>.</li>
-                            </ul>
-                        </div>
-                    </div>
+            <div className="timeline-card-content">
+              <div className="timeline-card-header">
+                <div className="role-date-badge">
+                  <span>Dez 25</span> &mdash; <strong className="current-badge">Atual</strong>
                 </div>
-            </section>
-        </>
-    );
+                <img src={logo_prodemge} alt="Prodemge" className="experience-logo" />
+              </div>
+
+              <h3 className="role-title">Analista de T.I</h3>
+              <p className="company-name">Prodemge &bull; Companhia de Tecnologia da Informação do Estado de MG</p>
+
+              <ul className="role-responsibilities">
+                <li>
+                  Manutenção e evolução contínua do <span className="highlight-tech">Sistema do Protocolo Digital</span>.
+                </li>
+                <li>
+                  Sustentação e melhorias críticas no <span className="highlight-tech">Sistema de Cadastro de Despachantes</span>.
+                </li>
+                <li>
+                  Desenvolvimento e sustentação com <span className="highlight-tech">CakePHP, Laravel, Oracle SQL</span> e <span className="highlight-tech">Bootstrap</span>.
+                </li>
+                <li>
+                  Adequação regulatória de sistemas corporativos ao <span className="highlight-tech">novo formato de CNPJ Alfanumérico</span>, aplicando testes automatizados e validações.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Item 2: Estagiário */}
+          <div className="timeline-block left-block">
+            <div className="timeline-node">
+              <div className="node-pulse"></div>
+            </div>
+
+            <div className="timeline-card-content">
+              <div className="timeline-card-header">
+                <div className="role-date-badge">
+                  <span>Out 24</span> &mdash; <span>Nov 25</span>
+                </div>
+                <img src={logo_prodemge} alt="Prodemge" className="experience-logo" />
+              </div>
+
+              <h3 className="role-title">Estagiário de Tecnologia</h3>
+              <p className="company-name">Prodemge &bull; Companhia de Tecnologia da Informação do Estado de MG</p>
+
+              <ul className="role-responsibilities">
+                <li>
+                  Aplicação diária de Metodologias Ágeis (<span className="highlight-tech">Scrum & Kanban</span>) em squad interdisciplinar.
+                </li>
+                <li>
+                  Refinamento e escrita de <span className="highlight-tech">Histórias de Usuário</span>, critérios de aceite e gestão de branches no <span className="highlight-tech">GitLab</span>.
+                </li>
+                <li>
+                  Evolução do <span className="highlight-tech">Sistema de Envio de Correspondências de Trânsito</span>, garantindo estabilidade e integridade dos dados enviados.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default Experiences;

@@ -87,10 +87,20 @@
 
 @media (max-width: 480px) {
     .back-to-top-container {
-        bottom: 15px;
-        left: 15px;
+        bottom: 16px;
+        left: 16px;
     }
     
+    .back-to-top-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+    }
+
+    .back-to-top-btn i {
+        font-size: 15px;
+    }
+
     .back-to-top-text {
         display: none; 
     }

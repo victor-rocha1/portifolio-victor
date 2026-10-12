@@ -7,17 +7,83 @@ html {
   line-height: 1.5;
   font-weight: 400;
 
-  /* Modo Normal */
+  /* Modo Normal (Light) - Cores originais preservadas */
   --cinza: #343a40;
   --cinza2: #343a40;
-  --white: #fff;
+  --white: #ffffff;
   --offwhite: #ECECEC;
   --whitedark: #D0CEC9;
-  --whitedarktext: #000;
+  --whitedarktext: #0f172a;
   --azul: #2067C7;
   --darkblue: #03235E;
   --grayblue: #4f5e64;
-  --dark: #000;
+  --dark: #000000;
+
+  /* Variáveis de suporte à experiência moderna */
+  --body-bg: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(32, 103, 199, 0.16);
+  --navbar-bg: rgba(255, 255, 255, 0.88);
+  --azul-glow: rgba(32, 103, 199, 0.35);
+  --accent-cyan: #38bdf8;
+  --tech-grid: rgba(32, 103, 199, 0.05);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Mona Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--body-bg);
+  color: var(--whitedarktext);
+  overflow-x: hidden;
+  transition: background-color 0.35s ease, color 0.35s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.dark {
+  /* Modo Dark - Cores originais e refinamento tech SYDLE */
+  --cinza: #D0CEC9;
+  --cinza2: #D0CEC9;
+  --white: #000000;
+  --offwhite: #0a1120;
+  --whitedark: #D0CEC9;
+  --whitedarktext: #f1f5f9;
+  --azul: #2067C7;
+  --darkblue: #D0CEC9;
+  --grayblue: #4f5e64;
+  --dark: #000000;
+
+  --body-bg: #030712;
+  --card-bg: rgba(11, 22, 42, 0.72);
+  --card-border: rgba(32, 103, 199, 0.28);
+  --navbar-bg: rgba(3, 7, 18, 0.82);
+  --azul-glow: rgba(32, 103, 199, 0.45);
+  --accent-cyan: #38bdf8;
+  --tech-grid: rgba(32, 103, 199, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--body-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(32, 103, 199, 0.5);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--azul);
+}
+
+::selection {
+  background-color: var(--azul);
+  color: #ffffff;
 }
 
 .about .dark {
@@ -26,14 +92,14 @@ html {
 
 .interface {
   max-width: 1280px;
-  font-family: "Mona Sans", serif;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Mona Sans", sans-serif;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 470px) {
-  * {
-    font-size: 0.75rem;
-  }
-
   #logotipo {
     max-width: 50px;
   }

@@ -34,48 +34,63 @@ body.dark .side-menu .checkbox:checked + .label .ball {
     transform: translateX(24px);
 }
 
+/* Dark Mode Toggle Switch */
 .checkbox {
     opacity: 0;
     position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
 }
 
 .label {
-    background-color: var(--whitedark);
+    background-color: #cbd5e1;
     border-radius: 50px;
     cursor: pointer;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding: 5px;
+    padding: 0 6px;
     position: relative;
-    height: 26px;
-    width: 50px;
+    height: 28px;
+    width: 54px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.dark .label {
+    background-color: #1e293b;
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 10px rgba(32, 103, 199, 0.2);
 }
 
 .label .ball {
-    background-color: var(--white);
+    background-color: #ffffff;
     border-radius: 50%;
     position: absolute;
-
     top: 2px;
-    left: 2px;
+    left: 3px;
     height: 22px;
     width: 22px;
-
     transform: translateX(0px);
-    transition: transform 0.2s linear;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
 
-.checkbox:checked+.label .ball {
-    transform: translateX(24px);
+.checkbox:checked + .label .ball {
+    transform: translateX(25px);
+    background-color: #f8fafc;
 }
 
 .fa-moon {
-    color: #f1c40f;
+    color: #fbbf24;
+    font-size: 13px;
+    z-index: 1;
 }
 
 .fa-sun {
-    color: #f39c12;
+    color: #f59e0b;
+    font-size: 13px;
+    z-index: 1;
 }

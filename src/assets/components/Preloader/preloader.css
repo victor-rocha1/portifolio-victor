@@ -1,0 +1,132 @@
+.preloader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: #030712;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s;
+}
+
+.preloader-fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.preloader-rings {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-ring-outer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px dashed rgba(32, 103, 199, 0.4);
+  border-top-color: #38bdf8;
+  animation: spinOuter 2.5s linear infinite;
+}
+
+.preloader-ring-inner {
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-bottom-color: var(--azul);
+  animation: spinInner 1.8s linear infinite reverse;
+}
+
+.preloader-logo-wrap {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.preloader-logo {
+  max-width: 44px;
+  height: auto;
+  filter: drop-shadow(0 0 12px rgba(32, 103, 199, 0.8));
+  animation: pulseLogo 1.6s ease-in-out infinite;
+}
+
+.preloader-brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Exo 2", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.brand-vr {
+  color: #ffffff;
+}
+
+.brand-code {
+  color: #38bdf8;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+}
+
+.preloader-bar-wrap {
+  width: 120px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.preloader-bar {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--azul), #38bdf8);
+  animation: loadProgress 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes spinOuter {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinInner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseLogo {
+  0%, 100% {
+    transform: scale(0.95);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes loadProgress {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
