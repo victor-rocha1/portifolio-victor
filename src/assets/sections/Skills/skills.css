@@ -1,8 +1,10 @@
 .skills {
-    padding: 60px 10%;
+    padding: 80px 6%;
     text-align: center;
-    background-color: var(--white);
+    background-color: transparent;
     color: var(--whitedarktext);
+    position: relative;
+    z-index: 1;
 }
 
 .interface {
@@ -32,7 +34,9 @@
     max-width: 380px; 
     padding: 30px;
     border-radius: 20px;
-    transition: transform 0.3s ease-in-out;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
     margin: 0 auto; 
 }
 

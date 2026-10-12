@@ -1,189 +1,174 @@
 header {
-    background-color: var(--white);
-    padding: 1px 0; /* Menor altura */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    z-index: 2000;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+  background-color: var(--header-bg);
+  backdrop-filter: blur(16px);
+  padding: 0;
+  box-shadow: 0 1px 0 var(--line);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
 }
 
-/* Navegação superior */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 32px;
-    padding-right: 32px;
-    position: relative;   /* Necessário para conter elementos filhos */
-    max-width: 1400px; /* Limita a largura máxima */
-    margin: 0 auto;       /* Centraliza o conteúdo */
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 32px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.navbar img {
-    width: 55px;
-    margin-left: 0; /* Remove a margem negativa */
+.site-nav__brand {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.site-nav img,
+.site-nav .brand-logo {
+  width: auto;
+  height: 46px;
+  margin: 0;
 }
 
 .nav-links {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    justify-content: center;
-    margin: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 8px;
 }
 
-.nav-links a{
-    font-size: 1.2rem !important;
+.nav-links a,
+.site-nav a {
+  margin: 0;
+  padding: 8px 14px;
+  text-decoration: none;
+  color: var(--cinza2);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: color 0.3s ease;
 }
 
-.navbar a {
-    margin: 0 60px;
-    text-decoration: none;
-    color: var(--cinza2);
-    font-size: 1.4rem;
-    transition: color 0.3s ease, transform 0.3s ease;
+.site-nav a:hover,
+.side-menu a:hover {
+  color: var(--azul);
 }
 
-.navbar a:first-child {
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
+.site-nav__tools {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.site-nav__contact {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 16px !important;
+  border-radius: 999px;
+  background: var(--azul);
+  color: #fff !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .theme-toggle-wrapper {
-    margin-right: 0;
-    padding-right: 0;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar a:hover {
-    color: var(--azul);
-    transform: scale(1.1);
-}
-
- /* Dark Mode  */
-.theme-toggle-wrapper {
-    /* O posicionamento absoluto foi removido para que ele se alinhe com o flexbox */
-    margin-right: 0;
-}
-
-/* Botão de menu lateral */
 .menu {
-    display: none;
-    border: none;
-    background: none;
-    cursor: pointer;
-    padding: 10px;
-    margin-left: auto;
-    position: relative;
+  display: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 10px;
+  position: relative;
 }
 
 .menu::before,
 .menu::after {
-    content: "";
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: var(--cinza2);
-    margin: 5px auto;
-    transition: transform 0.3s ease;
+  content: "";
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--cinza2);
+  margin: 5px auto;
+  transition: transform 0.3s ease;
 }
 
-/* Menu lateral */
+.menu.is-open::before {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.menu.is-open::after {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
 .side-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 250px;
-    height: 100%;
-    background-color: var(--offwhite);
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease;
-    padding-right: 5px;
-    padding: 20px;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: min(320px, 86vw);
+  height: 100%;
+  background-color: var(--offwhite);
+  box-shadow: -2px 0 24px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  padding: 20px;
+  z-index: 2100;
 }
 
-/* Quando o menu estiver aberto */
 .side-menu.open {
-    right: 0;
+  right: 0;
 }
 
-/* Cabeçalho do menu lateral (X e Dark Mode) */
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  border: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2050;
+}
+
 .side-menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 24px;
 }
 
-/* Botão de fechar (X) */
 .close-menu {
-    font-size: 1.5rem;
-    color: var(--cinza2);
-    cursor: pointer;
-    border: none;
-    background: none;
-    transition: color 0.3s ease;
+  font-size: 1.5rem;
+  color: var(--cinza2);
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
-.close-menu:hover {
-    color: #ff4d4d;
-}
-
-/* Botão de Dark Mode dentro do menu lateral */
-.dark-mode-button {
-    margin-left: auto;
-    transition: transform 0.3s ease;
-}
-
-/* Links do menu lateral */
 .side-menu a {
+  display: block;
+  margin: 12px 0;
+  text-decoration: none;
+  color: var(--cinza2);
+  font-size: 1.15rem;
+}
+
+@media (max-width: 900px) {
+  .site-nav {
+    padding: 12px 18px;
+  }
+
+  .nav-links,
+  .site-nav__contact {
+    display: none;
+  }
+
+  .menu {
     display: block;
-    margin: 15px 0;
-    text-decoration: none;
-    color: var(--cinza2);
-    font-size: 1.3rem;
-    transition: color 0.3s ease;
-}
-
-.side-menu a:hover {
-    color: var(--azul);
-}
-
-/* Responsividade */
-@media (max-width: 750px) {
-    .navbar {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
-
-    .navbar img {
-        margin-left: 0; /* Alinha perfeitamente ao canto */
-        width: 55px;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .theme-toggle-wrapper {
-        display: none;
-    }
-
-    .menu {
-        display: block;
-    }
-
-    .side-menu {
-        width: 50%;
-    }
-}
-
-@media (min-width: 751px) {
-    .menu {
-        display: none;
-    }
+  }
 }

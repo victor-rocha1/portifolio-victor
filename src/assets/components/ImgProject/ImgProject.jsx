@@ -1,22 +1,28 @@
-import React from 'react';
 import './imgproject.css';
 
-const ImgProject = ({ img, text, button, github }) => {
-  const handleButtonClick = () => {
-    window.open(github, '_blank');
+const ImgProject = ({ img, text, description, button, github }) => {
+  const handleButtonClick = (event) => {
+    event.stopPropagation();
+    window.open(github, '_blank', 'noopener,noreferrer');
   };
 
   return (
-    <div className="img-project" style={{ backgroundImage: `url(${img})`}}>
+    <article className="img-project" style={{ backgroundImage: `url(${img})` }}>
       <div className="overlay">
         <p>{text}</p>
+        {description && <span className="overlay__desc">{description}</span>}
         {button && (
-          <button onClick={handleButtonClick}>
-            <i class="bi bi-github"></i>
+          <button
+            type="button"
+            className="github-link"
+            onClick={handleButtonClick}
+            aria-label={`Abrir repositório ${text} no GitHub`}
+          >
+            <i className="bi bi-github" aria-hidden="true" />
           </button>
         )}
       </div>
-    </div>
+    </article>
   );
 };
 

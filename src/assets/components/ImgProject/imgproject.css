@@ -1,109 +1,88 @@
-.projects {
-    padding: 80px 4%;
-    padding-bottom: 80px;
-}
-
-.projects .flex {
-    justify-content: center;
-    flex-wrap: wrap;
-}
-/* Tamanho do Card */
-.img-project {  
-    margin-top: 60px;
-    width: 400px !important; 
-    height: 500px; 
-    background-color: var(--azul);
-    background-size: cover;
-    background-position: 100% 0%;
-    border-radius: 40px;
-    position: relative;
-    transition: box-shadow 0.5s ease, background-position 8s;
-    overflow: hidden; 
+.img-project {
+  margin-top: 24px;
+  width: 320px;
+  height: 460px;
+  background-color: var(--azul);
+  background-size: cover;
+  background-position: 50% 0%;
+  border-radius: 28px;
+  position: relative;
+  transition: box-shadow 0.5s ease, background-position 8s, transform 0.35s ease;
+  overflow: hidden;
+  border: 1px solid var(--line);
 }
 
 .img-project::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); 
-    transition: background-color 0.4s ease; 
-    border-radius: inherit; 
-    z-index: 1; 
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.4s ease;
+  z-index: 1;
 }
 
-.img-project:hover::after {
-    background-color: rgba(0, 0, 0, 0.5); 
+.img-project:hover::after,
+.img-project:focus-within::after {
+  background-color: rgba(0, 0, 0, 0.55);
 }
 
-.img-project:hover {
-    background-position: 100% 100%;
-    box-shadow: 0 0 25px var(--azul);
-    z-index: 1;
+.img-project:hover,
+.img-project:focus-within {
+  background-position: 50% 100%;
+  box-shadow: 0 0 28px var(--glow);
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 40px;
-    display: flex;
-    flex-direction: column; 
-    gap: -10px;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 700;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    z-index: 2; 
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  z-index: 2;
 }
 
 .overlay p {
-    color: var(--whitedark);
-    text-align: center;
+  color: #fff;
+  text-align: center;
+  margin: 0;
 }
 
-.overlay:hover {
-    opacity: 1;
+.overlay__desc {
+  color: var(--whitedark);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+  max-width: 24ch;
+}
+
+.overlay:hover,
+.img-project:hover .overlay,
+.img-project:focus-within .overlay {
+  opacity: 1;
 }
 
 .overlay button {
-    text-decoration: none; 
-    background: none; 
-    border: none; 
-    cursor: pointer; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
 }
 
 .overlay button i {
-    font-size: 40px;
-    color: white;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-@media (max-width: 970px) {
-    .img-project {
-        width: 450px;  
-        height: 520px; 
-    }
+  font-size: 2rem;
+  color: #fff;
 }
 
 @media (max-width: 475px) {
-    .img-project {
-        width: 270px !important;  
-        height: 450px; 
-    }
-
-    .overlay p {
-        font-size: 1.1rem;
-        text-align: center !important;
-    }
+  .img-project {
+    width: 250px;
+    height: 400px;
+  }
 }

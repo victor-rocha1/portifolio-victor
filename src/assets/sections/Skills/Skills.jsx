@@ -28,7 +28,8 @@ const techs = [
 
 function Skills() {
     return (
-        <section className="skills" id="skills">
+        <section className="skills section" id="skills">
+            <p className="section-kicker">Capacidades</p>
             <Title text="Habilidades" spantext="Gerais" />
             <br />
 

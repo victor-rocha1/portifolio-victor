@@ -1,8 +1,10 @@
 /* --- Estilos Gerais da Seção --- */
 .experiências {
-    padding: 60px 5%; 
-    background-color: var(--white);
+    padding: 80px 5%;
+    background-color: transparent;
     overflow-x: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 .timeline-container {

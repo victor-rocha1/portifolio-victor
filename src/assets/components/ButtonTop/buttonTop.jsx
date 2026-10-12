@@ -1,46 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import './ButtonTop.css';
+import { useEffect, useState } from 'react';
+import './buttonTop.css';
 
 function ButtonTop() {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
-  const toggleVisibility = () => {
-    if (window.scrollY > 300) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
+  useEffect(() => {
+    const about = document.getElementById('agencia');
+
+    const update = () => {
+      if (about) {
+        const passedAbout = about.getBoundingClientRect().bottom < 80;
+        setIsVisible(passedAbout);
+        return;
+      }
+      setIsVisible(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+    return () => window.removeEventListener('scroll', update);
+  }, []);
 
   const scrollToTop = () => {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: reduce ? 'auto' : 'smooth',
     });
   };
-
-  useEffect(() => {
-    window.addEventListener('scroll', toggleVisibility);
-    return () => {
-      window.removeEventListener('scroll', toggleVisibility);
-    };
-  }, []);
 
   return (
     <div className="back-to-top-container">
       {isVisible && (
-        <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div className="back-to-top-wrap">
           {isHovered && (
             <span className="back-to-top-text">Voltar ao topo</span>
           )}
           <button
+            type="button"
             onClick={scrollToTop}
             className="back-to-top-btn"
+            aria-label="Voltar ao topo"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            <i className="bi bi-arrow-up"></i>
+            <i className="bi bi-arrow-up" aria-hidden="true" />
           </button>
         </div>
       )}

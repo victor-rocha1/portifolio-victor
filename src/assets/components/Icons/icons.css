@@ -14,7 +14,8 @@
     align-items: center;
     width: 55px;
     height: 55px;
-    background-color: var(--offwhite);
+    background-color: var(--surface);
+    border: 1px solid var(--line);
     border-radius: 50%;
     transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */

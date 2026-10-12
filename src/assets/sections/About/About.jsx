@@ -1,41 +1,41 @@
-import './about.css';
-import avatar from '../../../../public/images/avatar.jpg';
-import fundo from '../../../../public/images/fundo.webp'; 
-import fundoEscuro from '../../../../public/images/fundo-escuro.webp';
-
+import logo from '../../../../public/images/logo.webp';
 import Title from '../../components/Title/Title';
 import Icons from '../../components/Icons/Icons';
+import Reveal from '../../components/Reveal/Reveal';
+import { SOCIAL_ICONS } from '../../../data/site';
+import './about.css';
 
-function About({ darkMode }) {
-  const socialIcons = [
-    { name: 'instagram', link: 'https://www.instagram.com/victor.rocha77/' },
-    { name: 'github', link: 'https://www.github.com/victor-rocha1' },
-  ];
-
+function About() {
   return (
-    <section
-      className='about'
-      id='about'
-      style={{ backgroundImage: `url(${darkMode ? fundoEscuro : fundo})` }}
-    >
-      <div className="interface">
-        <div className="about2">
-          <div className="avatar">
-            <img src={avatar} alt="Avatar de Victor" />
+    <section className="about section" id="agencia">
+      <div className="interface about2">
+        <Reveal className="about-visual">
+          <div className="about-mark">
+            <div className="about-mark__ring" />
+            <img src={logo} alt="Logotipo VR CODE" className="brand-logo about-mark__logo" />
           </div>
-          <div className="about-content">
-            <Title text='Victor' spantext='Rocha' />
-            <p className="desc">Desenvolvedor Full Stack</p>
-            <ul className='description-list'>
-              <li>🎓 Graduado em <strong>Análise e Desenvolvimento de Sistemas</strong>.</li>
-              <li>💻 Gosto de trabalhar com React e frameworks de Php (Laravel, CakePHP).</li>
-              <li>🏢 Assessor de T.I na <strong>Prodemge</strong>, focado em soluções eficientes.</li>
-            </ul>
-            <br />
-            <br />
-            <Icons icons={socialIcons} size="2rem" alignment="flex-start" />
-          </div>
-        </div>
+        </Reveal>
+
+        <Reveal className="about-content" delay={120}>
+          <p className="section-kicker">Agência</p>
+          <Title text="VR" spantext="CODE" />
+          <p className="desc">Tecnologia, estratégia e criação de soluções digitais.</p>
+          <ul className="description-list">
+            <li>
+              A VR CODE desenvolve experiências digitais com atenção à forma, ao código
+              e ao resultado — da interface à entrega.
+            </li>
+            <li>
+              Graduação em <strong>Análise e Desenvolvimento de Sistemas</strong>, com atuação
+              em React e frameworks PHP (Laravel e CakePHP).
+            </li>
+            <li>
+              Experiência em soluções de T.I na <strong>Prodemge</strong>, com foco em
+              manutenção, evolução de sistemas e qualidade.
+            </li>
+          </ul>
+          <Icons icons={SOCIAL_ICONS} size="1.6rem" alignment="flex-start" />
+        </Reveal>
       </div>
     </section>
   );

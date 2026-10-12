@@ -1,0 +1,36 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 16px;
+  background: #000;
+  color: #fff;
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.preloader.is-done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader__logo {
+  width: 72px;
+  height: auto;
+  animation: preloader-pulse 1.1s ease-in-out infinite;
+}
+
+.preloader__label {
+  margin: 0;
+  letter-spacing: 0.42em;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+@keyframes preloader-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(0.96); }
+  50% { opacity: 1; transform: scale(1); }
+}

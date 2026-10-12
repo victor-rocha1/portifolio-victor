@@ -1,4 +1,10 @@
-/* Container para alinhar à esquerda */
+.back-to-top-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .back-to-top-container {
     position: fixed;
     bottom: 30px;

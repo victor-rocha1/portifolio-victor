@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 88px;
 }
 
 :root {
@@ -18,23 +19,203 @@ html {
   --darkblue: #03235E;
   --grayblue: #4f5e64;
   --dark: #000;
+
+  --blue: var(--azul);
+  --header-bg: rgba(255, 255, 255, 0.86);
+  --surface: #ffffff;
+  --line: rgba(3, 35, 94, 0.12);
+  --glow: rgba(32, 103, 199, 0.18);
+  --muted: var(--grayblue);
 }
 
-.about .dark {
-  background-image: none;
+body.dark {
+  --cinza: #D0CEC9;
+  --cinza2: #D0CEC9;
+  --white: #000;
+  --offwhite: #12171b;
+  --whitedark: #D0CEC9;
+  --whitedarktext: #D0CEC9;
+  --azul: #1f6fd8;
+  --darkblue: #D0CEC9;
+  --grayblue: #4f5e64;
+  --dark: #000;
+
+  --blue: var(--azul);
+  --header-bg: rgba(0, 0, 0, 0.72);
+  --surface: #0b1014;
+  --line: rgba(31, 111, 216, 0.22);
+  --glow: rgba(31, 111, 216, 0.28);
+  --muted: #9aa4ac;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color: var(--white);
+  color: var(--whitedarktext);
+  font-family: "Mona Sans", sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.45s ease, color 0.45s ease;
+}
+
+#root,
+.app,
+main {
+  position: relative;
+  isolation: isolate;
+  min-height: 100%;
+}
+
+main {
+  z-index: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a,
+input,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--azul);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -48px;
+  z-index: 4000;
+  background: var(--azul);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 12px;
 }
 
 .interface {
+  width: min(1180px, calc(100% - 40px));
   max-width: 1280px;
-  font-family: "Mona Sans", serif;
+  margin: 0 auto;
+  font-family: "Mona Sans", sans-serif;
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+}
+
+.brand-logo {
+  width: auto;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+}
+
+body.dark .brand-logo {
+  filter: brightness(0) invert(1);
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 28px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--azul);
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px var(--glow);
+}
+
+.cta-button--ghost {
+  background: transparent;
+  color: var(--whitedarktext);
+  border: 1px solid var(--line);
+}
+
+.section-kicker {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--azul);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.github-link i {
+  font-size: 1.5rem;
 }
 
 @media (max-width: 470px) {
-  * {
-    font-size: 0.75rem;
+  :root {
+    font-size: 16px;
   }
 
   #logotipo {
     max-width: 50px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

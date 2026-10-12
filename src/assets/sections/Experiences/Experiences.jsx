@@ -5,7 +5,8 @@ import logo_prodemge from "../../../../public/images/logo_prodemge.webp"
 function Experiences() {
     return (
         <>
-            <section className="experiências" id='experiences'>
+            <section className="experiências section" id='experiences'>
+                <p className="section-kicker">Trajetória</p>
                 <Title text="Minha " spantext="Experiência" />
 
                 <div className="timeline-container">

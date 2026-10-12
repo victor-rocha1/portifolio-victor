@@ -1,58 +1,94 @@
 footer {
-    background-color: var(--white);
-    padding: 15px 4%;
-    max-height: 190px;
-    color: var(--whitedarktext);
+  position: relative;
+  z-index: 1;
+  background-color: var(--surface);
+  padding: 28px 6%;
+  color: var(--whitedarktext);
+  border-top: 1px solid var(--line);
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 .logo-footer {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #logotipo {
-    max-width: 70px;
-    height: auto;
+  max-width: 70px;
+  height: auto;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: var(--cinza2);
+  font-weight: 600;
+}
+
+.footer-nav a:hover {
+  color: var(--azul);
 }
 
 .social-icons {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 
 .footer-line {
-    height: 2px;
-    background-color: var(--azul);
-    margin: 0px 0px;
+  height: 2px;
+  background-color: var(--azul);
+  margin: 16px 0;
 }
 
-p i {
-    font-size: 2rem;
-    color: var(--azul);
-    padding-right: 10px;
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.contact-info i {
+  font-size: 1.4rem;
+  color: var(--azul);
+  padding-right: 10px;
 }
 
 .contact-info a {
-    color: var(--black);
-    text-decoration: none;
+  color: var(--whitedarktext);
+  text-decoration: none;
+}
+
+.contact-info small {
+  color: var(--muted);
 }
 
 @media (max-width: 768px) {
-    .social-icons {
-        margin-top: 10px;
-    }
+  .footer-container,
+  .contact-info {
+    justify-content: center;
+    text-align: center;
+  }
 
-    #logotipo {
-        max-width: 60px;
-    }
-
-    p i {
-        font-size: 1.4rem;
-    }
+  #logotipo {
+    max-width: 60px;
+  }
 }

@@ -1,0 +1,17 @@
+.contact {
+  padding: 110px 0;
+  text-align: center;
+}
+
+.contact__lead {
+  max-width: 46ch;
+  margin: 0 auto 28px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.contact__social {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+}
